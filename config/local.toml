@@ -1,0 +1,14 @@
+[server.http]
+port=9012
+[server.governor]
+port=9013
+[oss]
+mode = "oss"   # oss, file
+isDeleteSrcPath = false
+addr = "oss-cn-shanghai.aliyuncs.com"
+accessKeyID = "xxx"
+accessKeySecret = "xxx"
+ossBucket = "xx-cdn"
+cdnName = "https://xx-cdn-dev.oss-cn-shanghai.aliyuncs.com/"
+[mysql]
+dsn=""
