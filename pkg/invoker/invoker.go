@@ -7,11 +7,11 @@ import (
 
 var (
 	Oss *oss.Component
-	DB  *egorm.Componet
+	DB  *egorm.Component
 )
 
 func Init() error {
 	Oss = oss.Load("oss").Build()
-	DB = egorm.Load("db").Build()
+	DB = egorm.Load("mysql").Build()
 	return nil
 }

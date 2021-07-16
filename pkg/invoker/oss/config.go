@@ -18,9 +18,7 @@ type Config struct {
 	AccessKeyID     string
 	AccessKeySecret string
 	CdnName         string
-	OssBucket       string
 	FileBucket      string
-	IsDeleteSrcPath bool
 	logger          *elog.Component
 }
 
@@ -33,9 +31,7 @@ func DefaultConfig() *Config {
 		AccessKeyID:     "",
 		AccessKeySecret: "",
 		CdnName:         "",
-		OssBucket:       "",
 		FileBucket:      "",
-		IsDeleteSrcPath: false,
 		logger:          elog.EgoLogger.With(elog.FieldComponent(PackageName)),
 	}
 }
@@ -55,7 +51,7 @@ func (cfg *Config) Build(options ...Option) *Component {
 	for _, option := range options {
 		option(cfg)
 	}
-	obj, err := NewComponent(cfg, cfg.Addr, cfg.AccessKeyID, cfg.AccessKeySecret, cfg.OssBucket, cfg.IsDeleteSrcPath)
+	obj, err := NewComponent(cfg, cfg.Addr, cfg.AccessKeyID, cfg.AccessKeySecret)
 	if err != nil {
 		cfg.logger.Panic("new component err", elog.FieldErr(err), elog.FieldValueAny(cfg))
 	}

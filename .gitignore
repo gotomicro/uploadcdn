@@ -1,1 +1,4 @@
 test.toml
+.idea
+logs
+bin

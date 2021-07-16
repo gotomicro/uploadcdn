@@ -1,7 +1,7 @@
 [server.http]
-port=9012
+port = 9012
 [server.governor]
-port=9013
+port = 9013
 [oss]
 mode = "oss"   # oss, file
 isDeleteSrcPath = false
@@ -11,4 +11,10 @@ accessKeySecret = "xxx"
 ossBucket = "xx-cdn"
 cdnName = "https://xx-cdn-dev.oss-cn-shanghai.aliyuncs.com/"
 [mysql]
-dsn=""
+connMaxLifetime = "300s"
+debug = true
+rawDebug = true
+dsn = "root:root@tcp(127.0.0.1:3306)/uploadcdn?charset=utf8mb4&collation=utf8mb4_general_ci&parseTime=True&loc=Local&timeout=1s&readTimeout=5s&writeTimeout=5s"
+level = "panic"
+maxIdleConns = 50
+maxOpenConns = 100

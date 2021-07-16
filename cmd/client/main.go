@@ -30,7 +30,7 @@ func init() {
 	eflag.Register(&eflag.StringFlag{
 		Name:    "addr",
 		Usage:   "--addr",
-		Default: "http://127.0.0.1:9012",
+		Default: "https://upload.gocn.vip",
 	})
 	eflag.Register(&eflag.BoolFlag{
 		Name:    "debug",
