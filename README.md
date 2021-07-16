@@ -3,7 +3,7 @@
 
 使用client
 ```shell
-go install github.com/gotomicro/uploadcdn/cdm/client
+cd github.com/gotomicro/uploadcdn/cdm/client && go build
 client --clientId="分配的clientID" --clientSecret="分配的clientSecret" --dir="你的目录"
 ```
 
