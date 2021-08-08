@@ -2,12 +2,26 @@ APP_NAME:=uploadcdn
 APP_PATH:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 SCRIPT_PATH:=$(APP_PATH)/scripts
 COMPILE_OUT:=$(APP_PATH)/bin/$(APP_NAME)
+APP_CLIENT_NAME:=upload-client
+COMPILE_CLIENT_OUT:=$(APP_PATH)/bin/$(APP_CLIENT_NAME)
 
 
 build:
 	@echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>making $@<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
 	@chmod +x $(SCRIPT_PATH)/build/*.sh
 	@cd $(APP_PATH)/cmd/server && $(SCRIPT_PATH)/build/gobuild.sh $(APP_NAME) $(COMPILE_OUT)
+
+build-client:
+	@echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>making $@<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
+	@chmod +x $(SCRIPT_PATH)/build/*.sh
+	@cd $(APP_PATH)/cmd/client && $(SCRIPT_PATH)/build/gobuild.sh $(APP_CLIENT_NAME) $(COMPILE_CLIENT_OUT)
+
+
+linuxbuild-client:
+	@echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>making $@<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
+	@chmod +x $(SCRIPT_PATH)/build/*.sh
+	@cd $(APP_PATH)/cmd/client && $(SCRIPT_PATH)/build/linuxbuild.sh $(APP_CLIENT_NAME) $(COMPILE_CLIENT_OUT)
+
 
 
 server:export EGO_DEBUG=true

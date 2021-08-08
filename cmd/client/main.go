@@ -17,13 +17,13 @@ func init() {
 	})
 
 	eflag.Register(&eflag.StringFlag{
-		Name:    "clientId",
-		Usage:   "--clientId",
+		Name:    "id",
+		Usage:   "--id",
 		Default: "",
 	})
 	eflag.Register(&eflag.StringFlag{
-		Name:    "clientSecret",
-		Usage:   "--clientSecret",
+		Name:    "secret",
+		Usage:   "--secret",
 		Default: "",
 	})
 
@@ -55,8 +55,8 @@ func main() {
 	}
 
 	err := upload.RunCommand(
-		eflag.String("clientId"),
-		eflag.String("clientSecret"),
+		eflag.String("id"),
+		eflag.String("secret"),
 		eflag.String("addr"),
 		dirs,
 		eflag.Bool("debug"),
