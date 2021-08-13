@@ -4,6 +4,6 @@
 使用client
 ```shell
 cd github.com/gotomicro/uploadcdn/cdm/client && go build
-client --clientId="分配的clientID" --clientSecret="分配的clientSecret" --dir="你的目录"
+client --id="分配的clientID" --secret="分配的clientSecret" --dir="你的目录"
 ```
 
