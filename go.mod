@@ -5,8 +5,8 @@ go 1.16
 require (
 	github.com/aliyun/aliyun-oss-go-sdk v2.1.9+incompatible
 	github.com/baiyubin/aliyun-sts-go-sdk v0.0.0-20180326062324-cfa1a18b161f // indirect
-	github.com/gin-gonic/gin v1.7.1
-	github.com/gotomicro/ego v0.5.9-0.20210716144753-1ff94ac55026
+	github.com/gin-gonic/gin v1.7.7
+	github.com/gotomicro/ego v0.7.2-0.20211128050121-2b2c131c3d28
 	github.com/gotomicro/ego-component/egorm v0.2.2-0.20210713032908-c6607ad3ee3e // indirect
 	github.com/satori/go.uuid v1.2.0 // indirect
 	github.com/satori/uuid v1.2.0 // indirect
